@@ -1,16 +1,20 @@
-# sample_ar_core_flutter
+# 概要
+flutterでARを動かしているプロジェクトです.
 
-A new Flutter project.
+# トラブルシューティング
+## kotlin Gradle plugin versionでエラーが発生したとき
+```
+  The Android Gradle plugin supports only Kotlin Gradle plugin version 1.5.20 and higher.
+  The following dependencies do not satisfy the required version:
+  project ':arcore_flutter_plugin' -> org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.50
+```
+1. android/build.gradleの`ext.kotlin_version`を確認。1.5.20以下であれば1.5.20以上に修正する。
+2. android/build.gradleに特に問題がなければ、プロジェクト直下の`.flutter-plugins`を確認する。
+3. `arcore_flutter_plugin`のパスに移動する。
+4. `android/build.gradle`の`ext.kotlin_version`を確認し、1.5.20以下であれば1.5.20以上に修正する。
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## エミュレーターでうまくARが表示されないとき
+1. [こちら](https://developers.google.com/sceneform/develop/emulator?hl=ja)の通りにエミュレーターを設定する。
+2. 1を試して動かしてみる
+3. 2でうまく動かなかった場合、[リリースノート](https://github.com/google-ar/arcore-android-sdk/releases)から
+`Google_Play_Services_for_AR_1.41.0_x86_for_emulator.apk`をダウンロードし、エミュレーターにダウンロードしたファイルをドラッグアンドドロップする。
