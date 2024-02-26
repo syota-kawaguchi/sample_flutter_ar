@@ -1,5 +1,6 @@
 # 概要
-flutterでARを動かしているプロジェクトです.
+flutterでARを動かしているプロジェクトです.<br>
+<img width="200px" alt="SCR-20230502-nedr" src="https://github.com/syota-kawaguchi/sample_flutter_ar/assets/57338033/b8e7ce84-31cf-4e88-8f26-9619e4f901f5">
 
 # トラブルシューティング
 ## kotlin Gradle plugin versionでエラーが発生したとき
